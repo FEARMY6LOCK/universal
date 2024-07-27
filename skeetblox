@@ -1,8 +1,8 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "skeetblox universal",
-   LoadingTitle = "skeetblox universal",
+   Name = "skeetblox",
+   LoadingTitle = "skeetblox",
    LoadingSubtitle = "by soul",
    ConfigurationSaving = {
       Enabled = false,
@@ -41,7 +41,7 @@ local MainSection = MainTab:CreateSection("Main")
 
 Rayfield:Notify({
    Title = "You executed the script",
-   Content = "skeetblox universal",
+   Content = "skeetblox",
    Duration = 5,
    Image = 13047715178,
    Actions = { -- Notification Buttons
