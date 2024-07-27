@@ -26,6 +26,79 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
+local MainTab = Window:CreateTab("Skeetblox", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("Main")
+
+local Button = MainTab:CreateButton({
+   Name = "Animal Race INF WINS",
+   Callback = function()
+      for i = 1, 10000000 do
+
+         game:GetService("ReplicatedStorage").Remotes.Gifts.RequestSpinReward:InvokeServer()
+     
+         local ohString1 = "Desert"
+         local ohNumber2 = 1
+     
+         game:GetService("ReplicatedStorage").Remotes.Race.AwardRace:FireServer(ohString1, ohNumber2)
+     
+         local ohString2 = "Castle"
+         local ohNumber3 = 1
+     
+         game:GetService("ReplicatedStorage").Remotes.Race.AwardRace:FireServer(ohString2, ohNumber3)
+     
+         local ohString4 = "Sewer"
+         local ohNumber5 = 1
+     
+         game:GetService("ReplicatedStorage").Remotes.Race.AwardRace:FireServer(ohString4, ohNumber5)
+     
+         local ohString6 = "Mars"
+         local ohNumber7 = 1
+     
+         game:GetService("ReplicatedStorage").Remotes.Race.AwardRace:FireServer(ohString6, ohNumber7)
+     
+         local ohString8 = "Sea"
+         local ohNumber9 = 1
+     
+         game:GetService("ReplicatedStorage").Remotes.Race.AwardRace:FireServer(ohString8, ohNumber9)
+     end
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Race Clicker",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/LXHSxLwB"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Legends Of Speed",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/B5DHX6uV"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Blade Ball Auto Parry (Click Once)",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/PcfScxNQ"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Basketball Legends Always Green",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/crPUdCxk"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Da hood Camlock (Toggle:Q)",
+   Callback = function()
+      lloadstring(game:HttpGet("https://raw.githubusercontent.com/FEARMY6LOCK/camlock/main/skeetblox"))()
+   end,
+})
+
 local MainTab = Window:CreateTab("Aimbot", nil) -- Title, Image
 local MainSection = MainTab:CreateSection("Main")
 
@@ -72,7 +145,7 @@ local MainTab = Window:CreateTab("Misc", nil) -- Title, Image
 local MainSection = MainTab:CreateSection("Main")
 
 local Slider = MainTab:CreateSlider({
-   Name = "WalkSpeed Slider",
+   Name = "WalkSpeed Slider(May not work)",
    Range = {1, 350},
    Increment = 1,
    Suffix = "Speed",
@@ -84,7 +157,7 @@ local Slider = MainTab:CreateSlider({
 })
 
 local Slider = MainTab:CreateSlider({
-   Name = "JumpPower Slider",
+   Name = "JumpPower Slider(May not work)",
    Range = {1, 350},
    Increment = 1,
    Suffix = "Speed",
@@ -96,7 +169,7 @@ local Slider = MainTab:CreateSlider({
 })
 
 local Button = MainTab:CreateButton({
-   Name = "Infinite Jump",
+   Name = "Infinite Jump(May not work in some games)",
    Callback = function()
        --Toggles the infinite jump between on or off on every script run
 _G.infinjump = not _G.infinjump
@@ -106,7 +179,7 @@ if _G.infinJumpStarted == nil then
 	_G.infinJumpStarted = true
 	
 	--Notifies readiness
-	game.StarterGui:SetCore("SendNotification", {Title="Youtube Hub"; Text="Infinite Jump Activated!"; Duration=5;})
+	game.StarterGui:SetCore("SendNotification", {Title="skeetblox"; Text="May not work in some games"; Duration=5;})
 
 	--The actual infinite jump
 	local plr = game:GetService('Players').LocalPlayer
@@ -122,5 +195,17 @@ if _G.infinJumpStarted == nil then
 		end
 	end)
 end
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Zombie Animation (Only For Da Hood)",
+   Callback = function()
+      ucanchangethisifuwantlelelelele =
+      game:GetService("RunService").Stepped:Connect(
+      function()
+          game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+      end
+  )
    end,
 })
