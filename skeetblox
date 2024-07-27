@@ -103,7 +103,7 @@ local MainTab = Window:CreateTab("Aimbot", nil) -- Title, Image
 local MainSection = MainTab:CreateSection("Main")
 
 local Button = MainTab:CreateButton({
-   Name = "Aimbot (Hold RMB)",
+   Name = "Universal Aimbot (Hold RMB)",
    Callback = function()
       loadstring(game:HttpGet("https://pastebin.com/raw/Pj5Th9G8"))()
    end,
