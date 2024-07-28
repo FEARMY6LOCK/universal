@@ -364,3 +364,17 @@ if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool
 end
    end,
 })
+
+local Button = MainTab:CreateButton({
+   Name = "Cframe",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/FEARMY6LOCK/cframespeed/main/skeetblox"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Mobile Keyboard",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/FEARMY6LOCK/MobileKeyboard/main/skeetblox"))()
+   end,
+})
