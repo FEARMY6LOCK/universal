@@ -162,6 +162,53 @@ local Button = MainTab:CreateButton({
     end,
 })
 
+local MainTab = Window:CreateTab("Player", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("Main")
+
+local Button = MainTab:CreateButton({
+   Name = "Zombie Animation",
+   Callback = function()
+      ucanchangethisifuwantlelelelele =
+      game:GetService("RunService").Stepped:Connect(
+      function()
+          game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+      end
+  )
+   end,
+})
+
+local Button = MainTab:CreateButton({
+    Name = "Fake Headless (FE)",
+    Callback = function()
+        game.Players.LocalPlayer.Character.Head.Transparency = 1
+game.Players.LocalPlayer.Character.Head.Transparency = 1
+for i,v in pairs(game.Players.LocalPlayer.Character.Head:GetChildren()) do
+if (v:IsA("Decal")) then
+v.Transparency = 1
+end
+end
+    end,
+ })
+
+ local Button = MainTab:CreateButton({
+   Name = "Stretched Resolution",
+   Callback = function()
+      getgenv().Resolution = {
+         [" "] = 0.70
+     }
+     
+     local Camera = workspace.CurrentCamera
+     if getgenv().gg_scripters == nil then
+         game:GetService("RunService").RenderStepped:Connect(
+             function()
+                 Camera.CFrame = Camera.CFrame * CFrame.new(0, 0, 0, 1, 0, 0, 0, getgenv().Resolution[" "], 0, 0, 0, 1)
+             end
+         )
+     end
+     getgenv().gg_scripters = " "
+   end,
+})
+
 local MainTab = Window:CreateTab("Misc", nil) -- Title, Image
 local MainSection = MainTab:CreateSection("Main")
 
@@ -218,28 +265,3 @@ if _G.infinJumpStarted == nil then
 end
    end,
 })
-
-local Button = MainTab:CreateButton({
-   Name = "Zombie Animation",
-   Callback = function()
-      ucanchangethisifuwantlelelelele =
-      game:GetService("RunService").Stepped:Connect(
-      function()
-          game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
-      end
-  )
-   end,
-})
-
-local Button = MainTab:CreateButton({
-    Name = "Fake Headless (FE)",
-    Callback = function()
-        game.Players.LocalPlayer.Character.Head.Transparency = 1
-game.Players.LocalPlayer.Character.Head.Transparency = 1
-for i,v in pairs(game.Players.LocalPlayer.Character.Head:GetChildren()) do
-if (v:IsA("Decal")) then
-v.Transparency = 1
-end
-end
-    end,
- })
