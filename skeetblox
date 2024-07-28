@@ -209,11 +209,18 @@ end
    end,
 })
 
+local Button = MainTab:CreateButton({
+   Name = "Anti-Fling",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/FEARMY6LOCK/antifling/main/skeetblox"))()
+   end,
+})
+
 local MainTab = Window:CreateTab("Misc", nil) -- Title, Image
 local MainSection = MainTab:CreateSection("Main")
 
 local Slider = MainTab:CreateSlider({
-   Name = "WalkSpeed Slider(May not work)",
+   Name = "WalkSpeed Slider[May not work]",
    Range = {1, 350},
    Increment = 1,
    Suffix = "Speed",
@@ -225,7 +232,7 @@ local Slider = MainTab:CreateSlider({
 })
 
 local Slider = MainTab:CreateSlider({
-   Name = "JumpPower Slider(May not work)",
+   Name = "JumpPower Slider[May not work]",
    Range = {1, 350},
    Increment = 1,
    Suffix = "Speed",
@@ -237,7 +244,7 @@ local Slider = MainTab:CreateSlider({
 })
 
 local Button = MainTab:CreateButton({
-   Name = "Infinite Jump(May not work in some games)",
+   Name = "Infinite Jump[May not work in some games]",
    Callback = function()
        --Toggles the infinite jump between on or off on every script run
 _G.infinjump = not _G.infinjump
@@ -270,5 +277,90 @@ local Button = MainTab:CreateButton({
    Name = "Infinite Yield",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/FEARMY6LOCK/infiniteyield/main/skeetblox"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Inventory Sorter [Da hood]",
+   Callback = function()
+      local UserInputService = game:GetService("UserInputService")
+
+local Sorting = {
+    ['Enabled'] = true,
+    ['Keybind'] = Enum.KeyCode.Equals,
+    ['Slot 1'] = "[Double-Barrel SG]",
+    ['Slot 2'] = "[Revolver]",
+    ['Slot 3'] = "[Cookie]",
+    ['Slot 4'] = "[Chicken]",
+    ['Slot 5'] = "[Chicken]",
+    ['Slot 6'] = "[Pizza]",
+    ['Slot 7'] = "[Pizza]",
+    ['Slot 8'] = "",
+    ['Slot 9'] = "",
+    ['Slot 0'] = "[Katana]",
+}
+
+local function sortInventory()
+    if not Sorting.Enabled then
+        return
+    end
+
+    local player = game.Players.LocalPlayer
+    local backpack = player:FindFirstChildOfClass("Backpack")
+    if not backpack then
+        return
+    end
+
+    local originalItems = {}
+    for _, tool in pairs(backpack:GetChildren()) do
+        table.insert(originalItems, tool)
+    end
+    for _, tool in pairs(backpack:GetChildren()) do
+        tool.Parent = nil
+    end
+
+    for i = 1, 10 do
+        local slot = 'Slot ' .. tostring(i % 10) -- Slot 0 for the 10th slot
+        local desiredItemName = Sorting[slot]
+        if desiredItemName and desiredItemName ~= "" then
+            for index, tool in ipairs(originalItems) do
+                if tool.Name == desiredItemName then
+                    tool.Parent = backpack
+                    table.remove(originalItems, index)
+                    break
+                end
+            end
+        end
+    end
+    for _, tool in pairs(originalItems) do
+        tool.Parent = backpack
+    end
+end
+UserInputService.InputBegan:Connect(function(input, isProcessed)
+    if isProcessed then
+        return
+    end
+    if input.KeyCode == Sorting.Keybind then
+        sortInventory()
+    end
+end)
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Auto Reload [Da Hood]",
+   Callback = function()
+      _G.AutoReload = true
+
+while _G.AutoReload == true and game:GetService("RunService").Heartbeat:Wait() do
+if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+            if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool"):FindFirstChild("Ammo") then
+                if game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool"):FindFirstChild("Ammo").Value <= 0 then
+                    game:GetService("ReplicatedStorage").MainEvent:FireServer("Reload", game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool")) 
+                    wait(1)
+                end
+            end
+        end
+end
    end,
 })
