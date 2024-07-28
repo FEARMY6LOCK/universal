@@ -220,7 +220,7 @@ end
 })
 
 local Button = MainTab:CreateButton({
-   Name = "Zombie Animation (Only For Da Hood)",
+   Name = "Zombie Animation",
    Callback = function()
       ucanchangethisifuwantlelelelele =
       game:GetService("RunService").Stepped:Connect(
