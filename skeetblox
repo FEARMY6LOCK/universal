@@ -265,3 +265,10 @@ if _G.infinJumpStarted == nil then
 end
    end,
 })
+
+local Button = MainTab:CreateButton({
+   Name = "Infinite Yield",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/FEARMY6LOCK/infiniteyield/main/skeetblox"))()
+   end,
+})
