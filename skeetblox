@@ -106,6 +106,13 @@ local Button = MainTab:CreateButton({
    end,
 })
 
+local Button = MainTab:CreateButton({
+    Name = "Fps Boost Universal",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/FEARMY6LOCK/Fps/main/skeetblox"))()
+    end,
+ })
+
 local MainTab = Window:CreateTab("Aimbot", nil) -- Title, Image
 local MainSection = MainTab:CreateSection("Main")
 
